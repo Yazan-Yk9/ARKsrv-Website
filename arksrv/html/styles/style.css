@@ -1,0 +1,178 @@
+.footer-hover{
+    color: #cbd5e1;
+    transition: color 0.2s ease-in-out;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #0f172a;
+    color: #cbd5e1;
+}
+
+/* الناف بار المحسن مع تأثير الزجاج الضبابي */
+.navbar {
+    background-color: #1e293b !important;
+    border-bottom: 1px solid #334155;
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+}
+.navbar-brand span span, .footer span span {
+    color: #818cf8;
+}
+.fa-linux {
+    color: #818cf8;
+    font-size: 1.6rem;
+}
+.navbar-nav .nav-link {
+    color: #ffffff;
+    opacity: 0.85;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.navbar-nav .nav-link:hover {
+    opacity: 1;
+    background-color: #334155;
+}
+.active{
+    font-weight: bold !important;
+    opacity: 1;
+    color: #818cf8 !important;
+}
+.active:hover {
+    background-color: #1e293b !important;
+    cursor:auto !important;
+}
+
+/* زر تواصل معي في القائمة العلوية */
+.nav-btn-contact {
+    font-weight: bold !important;
+    background-color: #4f46e5 !important;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.nav-btn-contact:hover {
+    background-color: #4338ca !important;
+}
+
+/* الهيدر لجميع الصفحات */
+.hero-section, .services-header, .portfolio-header {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    border-bottom: 1px solid #1e293b;
+}
+.hero-section h1 span {
+    color: #818cf8;
+}
+
+.services-header i {
+    color: #818cf8;
+}
+
+.fa-terminal{
+    color: #334155; 
+    opacity: 0.5;
+}
+
+/* الأزرار المخصصة للموقع */
+.btn-primary-custom {
+    background-color: #4f46e5;
+    border: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn-primary-custom:hover {
+    background-color: #4338ca;
+}
+
+/* الكروت للخدمات والمشاريع */
+.card-custom, .service-detail-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+.service-detail-card {
+    padding: 40px;
+    margin-bottom: 40px;
+}
+.service-detail-card h3{
+    margin-bottom: 50px !importan;
+}
+
+.card-custom:hover, .service-detail-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+}
+.icon-box, .icon-large {
+    color: #818cf8;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.icon-large {
+    font-size: 3rem;
+}
+.portfolio-header div {
+    color: #818cf8;
+ 
+}
+
+/* التاجات والبادجات التقنية */
+.tech-tag, .badge-tech {
+    background-color: #0f172a;
+    color: #818cf8;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid #334155;
+    display: inline-block;
+    margin-left: 6px;
+    margin-bottom: 8px;
+}
+
+/* قسم التواصل الاجتماعي (أيقونات ملونة وتوهج ذكي) */
+.social-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    border: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.social-btn:hover {
+    transform: scale(1.1);
+}
+.btn-whatsapp { background-color: #25d366; }
+.btn-whatsapp:hover { box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
+.btn-telegram { background-color: #0088cc; }
+.btn-telegram:hover { box-shadow: 0 0 15px rgba(0, 136, 204, 0.4); }
+.btn-facebook { background-color: #1877f2; }
+.btn-facebook:hover { box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); }
+.btn-linkedin { background-color: #0a66c2; }
+.btn-linkedin:hover { box-shadow: 0 0 15px rgba(10, 102, 194, 0.4); }
+.btn-github { background-color: #24292e; }
+.btn-github:hover { box-shadow: 0 0 15px rgba(36, 41, 46, 0.4); }
+.btn-email { background-color: #ea4335; }
+.btn-email:hover { box-shadow: 0 0 15px rgba(234, 67, 53, 0.4); }
+
+/* الفوتر وروابط التصفح السفلية */
+.footer {
+    background-color: #020617;
+    border-top: 1px solid #1e293b;
+    padding: 40px 0 20px 0;
+}
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+.footer-links a:hover {
+    color: #818cf8;
+}
+.footer strong span span {
+    color: #818cf8;
+}
+.footer hr{
+    border-color: #1e293b;
+    margin: 25px 0 15px 0;
+}
