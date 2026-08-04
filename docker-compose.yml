@@ -1,31 +1,45 @@
-networks:
-  arksrv-network:
-    name: arksrv-network
-
 services:
-  # 1. خادم إدارة التوجيه وشهادات الأمان (Nginx Proxy Manager)
+  # 1. البوابة الرئيسية (بدون تغيير)
   nginx-proxy-manager:
     image: 'jc21/nginx-proxy-manager:latest'
     container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
-      - '80:80'   # منفذ الويب العادي
-      - '443:443' # منفذ الويب الآمن المشفر
-      - '81:81'   # منفذ لوحة التحكم الخاصة بك
+      - '80:80'
+      - '443:443'
+      - '81:81'
     volumes:
       - ./npm-data:/data
       - ./npm-letsencrypt:/etc/letsencrypt
+      - ./npm-data/auth/.htpasswd:/etc/nginx/.htpasswd:ro
     networks:
       - arksrv-network
 
-  # 2. حاوية موقعك الشخصي ARKsrv (معزولة ومحمية داخلياً)
+  # 2. خادم الويب Nginx (مسؤول عن تقديم الملفات وتوزيع الطلبات)
   arksrv-site:
-    image: 'nginx:alpine'
+    image: 'nginx:alpine' # ✅ صورة رسمية وموثوقة
     container_name: arksrv_website
     restart: unless-stopped
     expose:
       - "80"
     volumes:
       - ./arksrv/html:/usr/share/nginx/html
+      - ./arksrv/nginx-conf:/etc/nginx/conf.d
     networks:
       - arksrv-network
+    # لا توجد متغيرات بيئة معقدة هنا!
+
+  # 3. معالج PHP (مسؤول فقط عن تنفيذ PHP)
+  php-fpm:
+    image: 'php:8.2-fpm-alpine' # ✅ صورة رسمية وخفيفة
+    container_name: arksrv_php
+    restart: unless-stopped
+    volumes:
+      - ./arksrv/html:/usr/share/nginx/html # نفس مجلد الموقع
+    networks:
+      - arksrv-network
+    # لا توجد متغيرات بيئة معقدة هنا!
+
+networks:
+  arksrv-network:
+    driver: bridge

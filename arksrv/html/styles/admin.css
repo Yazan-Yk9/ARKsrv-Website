@@ -1,0 +1,180 @@
+/* ========================================================== */
+/* ========== تنسيقات لوحة التحكم admin9x.php ========== */
+/* ========================================================== */
+
+::placeholder {
+    color: #646262 !important;
+    opacity: 0.7;  /* درجة الشفافية (اختياري) */
+}
+
+/* دعم لمتصفحات مختلفة */
+::-webkit-input-placeholder { color: #646262 !important; opacity: 0.7; }
+::-moz-placeholder          { color: #646262 !important; opacity: 0.7; }
+:-ms-input-placeholder      { color: #646262 !important; opacity: 0.7; }
+:-moz-placeholder           { color: #646262 !important; opacity: 0.7; }
+
+
+.admin-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+.admin-card h2 {
+    color: #818cf8;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.admin-card .form-control,
+.admin-card .form-control:focus {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #ffffff;
+}
+.admin-card .form-control:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 0.2rem rgba(129, 140, 248, 0.25);
+}
+.admin-card .btn-primary {
+    background-color: #4f46e5;
+    border: none;
+}
+.admin-card .btn-primary:hover {
+    background-color: #4338ca;
+}
+.admin-card .btn-danger {
+    background-color: #dc2626;
+    border: none;
+}
+.admin-card .btn-danger:hover {
+    background-color: #b91c1c;
+}
+.admin-card .btn-warning {
+    background-color: #f59e0b;
+    border: none;
+    color: #0f172a;
+}
+.admin-card .btn-warning:hover {
+    background-color: #d97706;
+}
+.admin-card .btn-secondary {
+    background-color: #475569;
+    border: none;
+}
+.admin-card .btn-secondary:hover {
+    background-color: #334155;
+}
+.admin-card .btn-sm {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+}
+
+/* عناصر المشروع في قائمة الإدارة */
+.project-item {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.project-item .id-badge {
+    color: #818cf8;
+    font-weight: bold;
+    margin-left: 15px;
+    font-family: 'Courier New', monospace;
+    background: rgba(129, 140, 248, 0.1);
+    padding: 2px 10px;
+    border-radius: 4px;
+}
+.project-item .title-text {
+    color: #ffffff;
+    flex: 1;
+    font-weight: 500;
+}
+.project-item .d-flex {
+    gap: 8px;
+}
+
+/* محرر الكود (Textarea) */
+.code-editor {
+    font-family: 'Courier New', monospace;
+    direction: ltr;
+    text-align: left;
+    min-height: 200px;
+    background-color: #020617 !important;
+    color: #38bdf8 !important;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.admin-card textarea.form-control {
+    resize: vertical;
+}
+
+/* صندوق المعاينة */
+.preview-box {
+    background-color: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    color: #cbd5e1;
+    font-family: 'Cairo', sans-serif;
+}
+.preview-box h1, .preview-box h2, .preview-box h3 {
+    color: #ffffff;
+}
+.preview-box code {
+    background-color: #020617;
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.preview-box pre {
+    background-color: #020617;
+    padding: 10px;
+    border-radius: 6px;
+    color: #38bdf8;
+}
+
+/* نصوص المساعدة الصغيرة */
+.admin-card small.text-white-50 {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+/* ========================================================== */
+/* ========== تنسيقات بطاقات المشاريع (portfolio) ========== */
+/* ========================================================== */
+
+.project-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #818cf8;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+.project-card .project-icon {
+    color: #818cf8;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}

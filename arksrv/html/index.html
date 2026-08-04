@@ -1,234 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <!-- أيقونة علامة التبويب للمتصفح (Favicon) -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="حلول متكاملة لإدارة وحماية خوادم Linux. نقدم خدمات تهيئة VPS، تأمين السيرفرات، استضافة المواقع، وإصلاح الأعطال باحترافية عالية.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>إدارة خوادم لينكس - Linux System Administrator</title>
-    <!-- Bootstrap 5 CSS (RTL) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Cairo) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
 
-    <!-- القائمة العلوية (Navbar) -->
+    <link rel="stylesheet" href="./assets/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./assets/fonts/cairo.css">
+    <!-- <link rel="preload" href="/assets/fonts/cairo/cairo-v31-arabic_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin> -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="icon-large navbar-brand fw-bold text-white d-flex align-items-center" href="#">
-                <i class="fa-brands icon-large fa-linux me-2"></i> 
-                <span>ARK<span>srv</span></span>
-            </a>
-            
-            <button class="navbar-toggler menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-0 pt-3 pt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 mx-1 rounded-3 text-center transition-all active" href="#" >الرئيسية</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 mx-1 rounded-3 text-center transition-all" href="#services" >الخدمات</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-3 py-2 mx-1 rounded-3 text-center transition-all" href="#portfolio">أعمالي</a>
-                    </li>
-                    <li class="nav-item mt-2 mt-lg-0">
-                        <a class="nav-btn-contact nav-link text-white px-4 py-2 mx-1 rounded-pill text-center shadow-sm" href="#contact">تواصل معي</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a
+          class="navbar-brand fw-bold text-white d-flex align-items-center"
+          href="index.html"
+        >
+          <i
+            class="fa-brands fa-linux me-2"
+            style="font-size: 1.6rem; color: #818cf8"
+          ></i>
+          <span>ARK<span style="color: #818cf8">srv</span></span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-0 pt-3 pt-lg-0">
+            <li class="nav-item">
+              <span class="nav-link active px-3 py-2 mx-1 rounded-3 text-center"
+                >الرئيسية</span
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link px-3 py-2 mx-1 rounded-3 text-center"
+                href="services.html"
+                >الخدمات</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link px-3 py-2 mx-1 rounded-3 text-center"
+                href="portfolio.html"
+                >أعمالي</a
+              >
+            </li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <a
+                class="nav-btn-contact nav-link text-white px-4 py-2 mx-1 rounded-pill text-center"
+                href="#contact"
+                >تواصل معي</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <!-- (Hero Section) -->
-    <section id="hero" class="hero-section text-center text-md-start">
+    <main id="main-content">
+      <section id="hero" class="hero-section text-center text-md-start">
         <div class="container">
-            <div class="row align-items-center py-5">
-                <div class="col-md-7">
-                    <h1 class="display-4 fw-bold text-white mb-3">إدارة وحماية سيرفرات <span class="text-indigo">Linux</span> للمطورين والشركات</h1>
-                    <p class="lead mb-4 text-white-50">أساعدك على نقل مشاريعك إلى بيئة سحابية مستقرة، تأمين البيانات من الاختراق، وحل مشاكل السيرفرات المفاجئة بأعلى كفاءة وأقل استهلاك للموارد.</p>
-                     <a href="services.html" class="btn btn-primary-custom text-white rounded-pill shadow-sm"><i class="fa-solid fa-list-check me-2"></i> استعرض الخدمات والحلول</a>
-
-                </div>
-                <div class="col-md-5 text-center d-none d-md-block">
-                    <i class="fa-solid fa-terminal fa-5x"></i>
-                </div>
+          <div class="row align-items-center py-5">
+            <div class="col-md-7">
+              <h1 class="display-4 fw-bold text-white mb-3">
+                إدارة وحماية سيرفرات
+                <span class="text-indigo">Linux</span> للمطورين والشركات
+              </h1>
+              <p class="lead mb-4 text-white-50">
+                أساعدك على نقل مشاريعك إلى بيئة سحابية مستقرة، تأمين البيانات من
+                الاختراق، وحل مشاكل السيرفرات المفاجئة بأعلى كفاءة وأقل استهلاك
+                للموارد.
+              </p>
+              <a
+                href="services.html"
+                class="btn btn-primary-custom text-white rounded-pill shadow-sm"
+                ><i class="fa-solid fa-list-check me-2"></i> استعرض الخدمات
+                والحلول</a
+              >
             </div>
+            <div class="col-md-5 text-center d-none d-md-block">
+              <i class="fa-solid fa-terminal fa-5x" aria-hidden="true"></i>
+            </div>
+          </div>
         </div>
-    </section>
-    <!-- قسم الخدمات (Services) -->
-    <section id="services" class="services-header py-5">
+      </section>
+
+      <section id="services" class="services-header py-5">
         <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-white">الخدمات التقنية الاحترافية</h2>
-                <p class="text-white-50">حلول مخصصة لبناء بنية تحتية برمجية متكاملة وآمنة</p>
+          <div class="text-center mb-5">
+            <h2 class="fw-bold text-white">الخدمات التقنية الاحترافية</h2>
+            <p class="text-white-50">
+              حلول مخصصة لبناء بنية تحتية برمجية متكاملة وآمنة
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="card card-custom h-100 p-4 text-center">
+                <div class="icon-box">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-white mb-3 fs-5 fw-bold">تأمين السيرفرات</h3>
+                <p class="text-white-50 small">
+                  إعداد جدران الحماية (UFW)، حظر التخمين العشوائي بـ Fail2ban،
+                  وتأمين منافذ SSH الحساسة لمنع الاختراق.
+                </p>
+              </div>
             </div>
-            <div class="row g-4">
-                <!-- خدمة 1 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom h-100 p-4 text-center">
-                        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h4 class="text-white mb-3 fs-5 fw-bold">تأمين السيرفرات</h4>
-                        <p class="text-white-50 small">إعداد جدران الحماية (UFW)، حظر التخمين العشوائي بـ Fail2ban، وتأمين منافذ SSH الحساسة لمنع الاختراق.</p>
-                    </div>
-                </div>
-                <!-- خدمة 2 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom h-100 p-4 text-center">
-                        <div class="icon-box"><i class="fa-solid fa-server"></i></div>
-                        <h4 class="text-white mb-3 fs-5 fw-bold">تهيئة الـ VPS</h4>
-                        <p class="text-white-50 small">إعداد خوادم الويب (Nginx / Apache)، قواعد البيانات، وبيئات تشغيل الحاويات المتقدمة مثل Docker.</p>
-                    </div>
-                </div>
-                <!-- خدمة 3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom h-100 p-4 text-center">
-                        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
-                        <h4 class="text-white mb-3 fs-5 fw-bold">استضافة المواقع وإعدادها</h4>
-                        <p class="text-white-50 small">تهيئة السيرفرات لتناسب حجم مشروعك، رفع الملفات وقواعد البيانات، ربط الدومين وتفعيل شهادات الأمان SSL دون توقف الموقع.</p>
-                    </div>
-                </div>
-                <!-- خدمة 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="card card-custom h-100 p-4 text-center">
-                        <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <h4 class="text-white mb-3 fs-5 fw-bold">إصلاح الأعطال</h4>
-                        <p class="text-white-50 small">فحص سجلات الأخطاء (Logs)، حل مشكلات امتلاء المساحة المفاجئ، ومعالجة أسباب توقف المواقع.</p>
-                    </div>
-                </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card card-custom h-100 p-4 text-center">
+                <div class="icon-box"><i class="fa-solid fa-server"></i></div>
+                <h3 class="text-white mb-3 fs-5 fw-bold">تهيئة الـ VPS</h3>
+                <p class="text-white-50 small">
+                  إعداد خوادم الويب (Nginx / Apache)، قواعد البيانات، وبيئات
+                  تشغيل الحاويات المتقدمة مثل Docker.
+                </p>
+              </div>
             </div>
-            
-            <!-- زر الانتقال لصفحة الخدمات التفصيلية -->
-            <div class="text-center mt-5">
-                <a href="services.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"><i class="fa-solid fa-circle-info me-2"></i>عرض تفاصيل الخدمات</a>
+            <div class="col-md-6 col-lg-3">
+              <div class="card card-custom h-100 p-4 text-center">
+                <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+                <h3 class="text-white mb-3 fs-5 fw-bold">
+                  استضافة المواقع وإعدادها
+                </h3>
+                <p class="text-white-50 small">
+                  تهيئة السيرفرات لتناسب حجم مشروعك، رفع الملفات وقواعد
+                  البيانات، ربط الدومين وتفعيل شهادات الأمان SSL دون توقف
+                  الموقع.
+                </p>
+              </div>
             </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="card card-custom h-100 p-4 text-center">
+                <div class="icon-box">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="text-white mb-3 fs-5 fw-bold">إصلاح الأعطال</h3>
+                <p class="text-white-50 small">
+                  فحص سجلات الأخطاء (Logs)، حل مشكلات امتلاء المساحة المفاجئ،
+                  ومعالجة أسباب توقف المواقع.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <a
+              href="services.html"
+              class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"
+              ><i class="fa-solid fa-circle-info me-2"></i>عرض تفاصيل الخدمات</a
+            >
+          </div>
         </div>
-    </section>
-    <!-- قسم أعمالي (Portfolio Section) -->
-    <section id="portfolio" class="py-5 portfolio-header">
+      </section>
+
+      <section id="portfolio" class="py-5 portfolio-header">
         <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold text-white">معرض أعمالي ومشاريعي</h2>
-                <p class="text-white-50">نماذج واقعية وحلول تقنية قمت ببنائها وإدارتها بالكامل</p>
-            </div>
-            <div class="row g-4">
-                <!-- مشروع 1 -->
-                <div class="col-md-6">
-                    <div class="card card-custom h-100 p-4 d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fa-solid fa-network-wired text-indigo fa-2x me-3"></i>
-                                <h4 class="text-white m-0 fs-5 fw-bold">بناء شبكة ربط عكسي ذكية وآمنة</h4>
-                            </div>
-                            <p class="text-white-50 small mb-4">تصميم نفق عكسي مشفر لربط بيئات العمل المحلية بخوادم سحابية خارجية لتجاوز جدران الحماية للشبكات المغلقة مع الحفاظ على استقرار الأداء.</p>
-                        </div>
-                        <div class="text-start">
-                            <a href="#" target="_blank" class="btn btn-sm btn-outline-light rounded-pill px-3"><i class="fa-brands fa-github me-1"></i>عرض</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- مشروع 2 -->
-                <div class="col-md-6">
-                    <div class="card card-custom h-100 p-4 d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fa-solid fa-gears text-indigo fa-2x me-3"></i>
-                                <h4 class="text-white m-0 fs-5 fw-bold">تركيب لوحة تحكم Aapanel على خادم VPS</h4>
-                            </div>
-                            <p class="text-white-50 small mb-4">تثبيت وضبط لوحة تحكم aaPanel على خادم VPS لتسهيل إدارة المواقع،قواعد البيانات,الشهادات الرقمية,مع تحسين الأمان والنسخ الاحتياطي</p>
-                        </div>
-                        <div class="text-start">
-                            <a href="project.html#aapanel-vps" class="btn btn-sm btn-outline-light rounded-pill px-3"><i class="fa-brands fa-medium me-1"></i>عرض</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- زر الانتقال لمراجعة الشرح الكامل للأعمال -->
-            <div class="text-center mt-5">
-                <a href="portfolio.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"><i class="fa-solid fa-arrow-up-right-from-square me-2"></i>استعرض المشاريع</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم التواصل (Contact) -->
-    <section id="contact" class="py-5">
-        <div class="container py-4 text-center">
-            <h2 class="fw-bold text-white mb-3">هل تحتاج إلى حلول مخصصة لسيرفرك؟</h2>
-            <p class="text-white-50 mb-4">سواء كنت مبرمجاً تحتاج لتجهيز بيئة عمل لمشروعك، أو صاحب شركة تبحث عن حماية بياناتك، أنا هنا للمساعدة.</p>
-            
-            <!-- أزرار الحسابات كأيقونات دائرية ملونة وبدون نص -->
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <!-- واتساب -->
-                <a href="https://wa.me/+963996125895" target="_blank" class="social-btn btn-whatsapp rounded-circle d-flex align-items-center justify-content-center text-white"title="واتساب">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-                <!-- تليغرام -->
-                <a href="https://t.me/YkSy9" target="_blank" class="social-btn btn-telegram rounded-circle d-flex align-items-center justify-content-center text-white" title="تليغرام">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </a>
-                <!-- فيسبوك -->
-                <a href="https://facebook.com/profile.php?id=61577802796718" target="_blank" class="social-btn btn-facebook rounded-circle d-flex align-items-center justify-content-center text-white" title="فيسبوك">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <!-- لينكدان -->
-                <!-- <a href="#" target="_blank" class="social-btn btn-linkedin rounded-circle d-flex align-items-center justify-content-center text-white" title="لينكدان">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a> -->
-
-                <!-- بريد إلكتروني -->
-                <a href="mailto:info@arksrv.cam" class="social-btn btn-email rounded-circle d-flex align-items-center justify-content-center text-white" title="البريد الإلكتروني">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-        <!-- الفوتر المحسّن (Enhanced Footer) -->
-    <footer class="footer mt-5">
-        <div class="container">
-        <div class="row align-items-center g-3 text-center text-md-start">
-            <!-- قسم اسم الموقع والشعار -->
+          <div class="text-center mb-5">
+            <h2 class="fw-bold text-white">معرض أعمالي ومشاريعي</h2>
+            <p class="text-white-50">
+              نماذج واقعية وحلول تقنية قمت ببنائها وإدارتها بالكامل
+            </p>
+          </div>
+          <div class="row g-4">
             <div class="col-md-6">
-                <h5 class="fw-bold text-white mb-2">
-                    <i class="fa-brands fa-linux me-2"></i> 
-                    <span>ARK<span>srv</span></span>
-                </h5>
-                <p class="text-white-50 small mb-0">حلول هندسية متكاملة لإدارة وحماية البنية التحتية للسيرفرات السحابية والمحلية.</p>
-            </div>
-            
-            <!-- روابط التنقل السريع للفوتر مع تأثير هوفر ناعم ومضمون -->
-            <div class="col-md-6 text-center text-md-end">
-                <div class="small mb-0 footer-links">
-                    <a href="index.html" class="text-decoration-none me-3 ">الرئيسية</a>
-                    <a href="portfolio.html" class="text-decoration-none me-3">المشاريع</a>
-                    <a href="services.html" class="text-decoration-none me-3">تفاصيل الخدمات</a>
+              <div
+                class="card card-custom h-100 p-4 d-flex flex-column justify-content-between"
+              >
+                <div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i
+                      class="fa-solid fa-network-wired text-indigo fa-2x me-3"
+                      style="color: #818cf8"
+                    ></i>
+                    <h3 class="text-white m-0 fs-5 fw-bold">
+                      بناء شبكة ربط عكسي ذكية وآمنة
+                    </h3>
+                  </div>
+                  <p class="text-white-50 small mb-4">
+                    تصميم نفق عكسي مشفر لربط بيئات العمل المحلية بخوادم سحابية
+                    خارجية لتجاوز جدران الحماية للشبكات المغلقة مع الحفاظ على
+                    استقرار الأداء.
+                  </p>
                 </div>
+                <div class="text-start">
+                  <a
+                    href="project.html#reverse-proxy"
+                    class="btn btn-sm btn-outline-light rounded-pill px-3"
+                    ><i class="fa-regular fa-eye me-1"></i>عرض</a
+                  >
+                </div>
+              </div>
             </div>
-        </div>
-        
-        <!-- سطر الحقوق السفلي والتاريخ التلقائي -->
-        <hr>
-        <div class="row">
-            <div class="col-12 text-center">
-                <p class="text-white-50 small mb-2">تدار بيئة العمل والبنية التحتية للموقع بالكامل بواسطة <strong><span class="text-white">ARK<span>srv</span></span></strong> لضمان أعلى مستويات الأمان والاستقرار.</p>
-                <p class="text-white-50 small mb-0">جميع الحقوق محفوظة &copy; <span id="current-year"></span></p>
+            <div class="col-md-6">
+              <div
+                class="card card-custom h-100 p-4 d-flex flex-column justify-content-between"
+              >
+                <div>
+                  <div class="d-flex align-items-center mb-3">
+                    <i
+                      class="fa-solid fa-gears text-indigo fa-2x me-3"
+                      style="color: #818cf8"
+                    ></i>
+                    <h3 class="text-white m-0 fs-5 fw-bold">
+                      تركيب لوحة تحكم Aapanel على خادم VPS
+                    </h3>
+                  </div>
+                  <p class="text-white-50 small mb-4">
+                    تثبيت وضبط لوحة تحكم aaPanel على خادم VPS لتسهيل إدارة
+                    المواقع،قواعد البيانات,الشهادات الرقمية,مع تحسين الأمان
+                    والنسخ الاحتياطي
+                  </p>
+                </div>
+                <div class="text-start">
+                  <a
+                    href="project.html#aapanel-vps"
+                    class="btn btn-sm btn-outline-light rounded-pill px-3"
+                    ><i class="fa-regular fa-eye me-1"></i>عرض</a
+                  >
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="text-center mt-5">
+            <a
+              href="portfolio.html"
+              class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold"
+              ><i class="fa-solid fa-arrow-up-right-from-square me-2"></i>استعرض
+              المشاريع</a
+            >
+          </div>
         </div>
-    </div>
-</footer>
-        <!-- جافا سكربت التفاعلي المحسّن بالكامل -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-        <script src="scripts/script.js"></script>
-        </script>
-    </body>
-</html>
+      </section>
 
+      <section id="contact" class="py-5">
+        <div class="container py-4 text-center">
+          <h2 class="fw-bold text-white mb-3">
+            هل تحتاج إلى حلول مخصصة لسيرفرك؟
+          </h2>
+          <p class="text-white-50 mb-4">
+            سواء كنت مبرمجاً تحتاج لتجهيز بيئة عمل لمشروعك، أو صاحب شركة تبحث عن
+            حماية بياناتك، أنا هنا للمساعدة.
+          </p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a
+              href="https://wa.me/+963996125895"
+              target="_blank"
+              class="social-btn btn-whatsapp"
+              title="واتساب"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://t.me/YkSy9"
+              target="_blank"
+              class="social-btn btn-telegram"
+              title="تليغرام"
+              ><i class="fa-solid fa-paper-plane"></i
+            ></a>
+            <a
+              href="https://facebook.com/profile.php?id=61577802796718"
+              target="_blank"
+              class="social-btn btn-facebook"
+              title="فيسبوك"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://github.com/Yazan-Yk9"
+              target="_blank"
+              class="social-btn btn-github"
+              title="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <!-- <a href="#" target="_blank" class="social-btn btn-linkedin" title="لينكدان"><i class="fa-brands fa-linkedin-in"></i></a> -->
+            <a
+              href="mailto:info@arksrv.cam"
+              class="social-btn btn-email"
+              title="البريد الإلكتروني"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row align-items-center g-3 text-center text-md-start">
+          <div class="col-md-6">
+            <div class="fw-bold text-white mb-2">
+              <i class="fa-brands fa-linux me-2" style="color: #818cf8"></i>
+              <span>ARK<span style="color: #818cf8">srv</span></span>
+            </div>
+            <p class="text-white-50 small mb-0">
+              حلول هندسية متكاملة لإدارة وحماية البنية التحتية للسيرفرات
+              السحابية والمحلية.
+            </p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="small mb-0 footer-links">
+              <a href="index.html" class="text-decoration-none me-3"
+                >الرئيسية</a
+              >
+              <a href="portfolio.html" class="text-decoration-none me-3"
+                >المشاريع</a
+              >
+              <a href="services.html" class="text-decoration-none me-3"
+                >تفاصيل الخدمات</a
+              >
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="text-white-50 small mb-2">
+              تدار بيئة العمل والبنية التحتية للموقع بالكامل بواسطة
+              <strong
+                ><span class="text-white"
+                  >ARK<span style="color: #818cf8">srv</span></span
+                ></strong
+              >
+              لضمان أعلى مستويات الأمان والاستقرار.
+            </p>
+            <p class="text-white-50 small mb-0">
+              جميع الحقوق محفوظة &copy; <span id="current-year"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script> -->
+    <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/font-awesome/js/all.min.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

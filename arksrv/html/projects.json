@@ -1,0 +1,16 @@
+{
+  "aapanel-vps": {
+    "title": "تثبيت وضبط لوحة تحكم aaPanel وتأمينها بالكامل على خادم VPS",
+    "markdown": "# الهدف من المشروع\nمساعدة العميل في إدارة الخادم والمواقع عبر واجهة رسومية.\n\n## الخطوات\n1. تحديث النظام\n2. تثبيت اللوحة\n3. إعداد SSL",
+    "icon": "fa-server",
+    "short_desc": "تهيئة خادم VPS مع لوحة تحكم aaPanel وإعداد SSL والحماية.",
+    "tech_tags": "aaPanel, Ubuntu, Nginx"
+  },
+  "docker-env": {
+    "title": "بناء وإدارة حاويات Docker معزولة للمواقع",
+    "markdown": "# بيئة حاويات Docker المتكاملة\nتم إعداد بيئة عمل باستخدام Docker Compose.",
+    "icon": "fa-brands fa-docker",
+    "short_desc": "بيئة تطوير متكاملة باستخدام Docker Compose مع عزل التطبيقات.",
+    "tech_tags": "Docker, Nginx, PHP"
+  }
+}
