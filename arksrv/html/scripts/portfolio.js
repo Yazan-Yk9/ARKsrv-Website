@@ -1,7 +1,3 @@
-// ==========================================================
-// portfolio.js - عرض المشاريع من projects.json
-// ==========================================================
-
 document.addEventListener('DOMContentLoaded', function() {
     const container = document.getElementById('projects-container');
     const loadingMsg = document.getElementById('loading-message');

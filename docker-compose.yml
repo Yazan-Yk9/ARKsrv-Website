@@ -1,5 +1,4 @@
 services:
-  # 1. البوابة الرئيسية (بدون تغيير)
   nginx-proxy-manager:
     image: 'jc21/nginx-proxy-manager:latest'
     container_name: nginx-proxy-manager
@@ -15,9 +14,8 @@ services:
     networks:
       - arksrv-network
 
-  # 2. خادم الويب Nginx (مسؤول عن تقديم الملفات وتوزيع الطلبات)
   arksrv-site:
-    image: 'nginx:alpine' # ✅ صورة رسمية وموثوقة
+    image: 'nginx:alpine'
     container_name: arksrv_website
     restart: unless-stopped
     expose:
@@ -27,18 +25,15 @@ services:
       - ./arksrv/nginx-conf:/etc/nginx/conf.d
     networks:
       - arksrv-network
-    # لا توجد متغيرات بيئة معقدة هنا!
 
-  # 3. معالج PHP (مسؤول فقط عن تنفيذ PHP)
   php-fpm:
-    image: 'php:8.2-fpm-alpine' # ✅ صورة رسمية وخفيفة
+    image: 'php:8.2-fpm-alpine'
     container_name: arksrv_php
     restart: unless-stopped
     volumes:
-      - ./arksrv/html:/usr/share/nginx/html # نفس مجلد الموقع
+      - ./arksrv/html:/usr/share/nginx/html
     networks:
       - arksrv-network
-    # لا توجد متغيرات بيئة معقدة هنا!
 
 networks:
   arksrv-network:

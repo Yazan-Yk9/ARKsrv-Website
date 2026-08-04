@@ -1,4 +1,3 @@
-// projects-db.js - الإصدار الذي يتعامل مع ملف JSON الخارجي
 let projectsDatabase = {};
 
 async function loadProjects() {
@@ -6,7 +5,7 @@ async function loadProjects() {
         const response = await fetch('projects.json');
         if (!response.ok) throw new Error('فشل تحميل البيانات');
         projectsDatabase = await response.json();
-        renderActiveProject(); // عرض المشروع بعد التحميل
+        renderActiveProject();
     } catch (error) {
         console.error(error);
         document.getElementById('project-title').textContent = '⚠️ حدث خطأ في تحميل البيانات';
@@ -35,6 +34,5 @@ function renderActiveProject() {
     }
 }
 
-// تشغيل التحميل عند فتح الصفحة
 window.addEventListener('DOMContentLoaded', loadProjects);
 window.addEventListener('hashchange', renderActiveProject);

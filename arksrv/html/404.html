@@ -9,9 +9,10 @@
     />
     <title>404 - الصفحة غير موجودة | ARKsrv</title>
 
-    <link rel="stylesheet" href="./assets/font-awesome/css/all.min.css">
-    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="./assets/fonts/cairo.css">
+    <link rel="stylesheet" href="./assets/font-awesome/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css"/>
+    <link rel="stylesheet" href="./assets/fonts/cairo.css"/>
+    <link rel="stylesheet" href="./styles/style.css"/>
     <style>
       * {
         margin: 0;
@@ -230,31 +231,26 @@
 
     <div class="error-wrapper">
       <div class="error-card">
-        <!-- أيقونة عائمة -->
         <div class="error-icon">
           <i class="fa-solid fa-satellite-dish"></i>
         </div>
 
-        <!-- رقم 404 -->
         <div class="error-code">404</div>
 
-        <!-- عنوان -->
         <h1 class="error-title">
           <i
             class="fa-solid fa-triangle-exclamation me-2"
             style="color: #f59e0b; -webkit-text-fill-color: #f59e0b"
           ></i>
-          الصفحة المطلوبة غير موجودة
+          هذه الصفحة غير موجودة
         </h1>
 
-        <!-- نص -->
         <p class="error-text">
-          يبدو أن الإشارة فقدت مسارها إلى هذه الصفحة.<br />
-          ربما تم نقلها، أو تغير اسمها، أو أنها مجرد
-          <code>404 Not Found</code> في السجلات.
+          <!-- هذه الصفحة غير موجودة.<br /> -->
+          ربما تم نقلها، أو تغير اسمها
+          <code>404 Not Found</code>.
         </p>
 
-        <!-- أزرار -->
         <div class="btn-group-404">
           <a href="index.html" class="btn-404-primary">
             <i class="fa-solid fa-house"></i> العودة للرئيسية
@@ -267,11 +263,10 @@
           </a>
         </div>
 
-        <!-- سطر أوامر وهمي -->
         <div class="error-footer-text">
           <i class="fa-solid fa-terminal"></i>
-          <span style="color: #64748b">admin@arksrv:~$</span>
-          <span style="color: #a5f3fc">ping -c 4 arksrv.com</span>
+          <span style="color: #64748b">root@arksrv:~#</span>
+          <span style="color: #a5f3fc">ping -c 4 arksrv.cam</span>
           <span
             style="
               color: #64748b;
@@ -290,7 +285,6 @@
     <script src="./assets/font-awesome/js/all.min.js"></script>
     <script src="scripts/script.js"></script>
     <script>
-      // توليد نجوم عشوائية
       const starsContainer = document.getElementById("stars");
       for (let i = 0; i < 80; i++) {
         const star = document.createElement("div");

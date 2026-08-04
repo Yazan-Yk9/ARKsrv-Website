@@ -1,15 +1,8 @@
 <?php
-// =============================================
-// لوحة تحكم إدارة المشاريع - ARKsrv
-// =============================================
+$admin_password = '';
 
-// 🔐 تم تعطيل كلمة المرور النصية والاعتماد على Auth Basic الخاص بـ Nginx
-$admin_password = ''; // قيمة فارغة لتعطيل المصادقة النصية
-
-// تحديد مسار ملف JSON
 $jsonFile = 'projects.json';
 
-// جلب البيانات الحالية
 function getProjects() {
     global $jsonFile;
     if (!file_exists($jsonFile)) {
@@ -19,18 +12,15 @@ function getProjects() {
     return json_decode($data, true);
 }
 
-// حفظ البيانات
 function saveProjects($data) {
     global $jsonFile;
     file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-// معالجة الطلبات (إضافة - تعديل - حذف)
 $projects = getProjects();
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // إضافة مشروع جديد
     if (isset($_POST['action']) && $_POST['action'] === 'add') {
         $id = trim($_POST['id']);
         $title = trim($_POST['title']);
@@ -55,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     
-    // حذف مشروع
     if (isset($_POST['action']) && $_POST['action'] === 'delete') {
         $id = $_POST['id'];
         if (isset($projects[$id])) {
@@ -65,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     
-    // تعديل مشروع
     if (isset($_POST['action']) && $_POST['action'] === 'edit') {
         $id = $_POST['id'];
         $title = trim($_POST['title']);
@@ -103,20 +91,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.rtl.min.css">
     <link rel="stylesheet" href="./assets/fonts/cairo.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <!-- ✅ تنسيقات خاصة بلوحة التحكم (منفصلة) -->
     <link rel="stylesheet" href="./styles/admin.css">
 </head>
 <body>
     <div class="container py-5">
         <div class="text-center mb-4">
-            <h1 class="fw-bold text-white"><i class="fa-brands fa-linux text-primary"></i> ARK<span class="text-primary">srv</span> <small class="fs-6 text-white-50">لوحة تحكم المدير</small></h1>
+            <h1 class="fw-bold text-white"><i class="fa-brands fa-linux text-primary" style="color: #818cf8 !important" ></i> ARK<span style="color: #818cf8" >srv</span> <small class="fs-6 text-white-50">لوحة تحكم المدير</small></h1>
             <p class="text-white-50">إضافة وتعديل وحذف المشاريع في ملف <code>projects.json</code></p>
             <a href="index.html" class="btn btn-outline-light btn-sm mt-2"><i class="fas fa-home"></i> العودة للموقع</a>
         </div>
 
         <?php if ($message) echo $message; ?>
 
-        <!-- ===== نموذج إضافة مشروع جديد ===== -->
         <div class="admin-card">
             <h2><i class="fas fa-plus-circle"></i> إضافة مشروع جديد</h2>
             <form method="POST">
@@ -132,7 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" name="title" class="form-control" placeholder="عنوان المشروع" required>
                     </div>
                     
-                    <!-- ===== الحقول الجديدة للبطاقة ===== -->
                     <div class="col-md-4">
                         <label class="form-label text-white-50">أيقونة البطاقة (Icon)</label>
                         <input type="text" name="icon" class="form-control" placeholder="مثال: fa-server" value="fa-code">
@@ -159,7 +144,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
 
-        <!-- ===== قائمة المشاريع الحالية ===== -->
         <div class="admin-card">
             <h2><i class="fas fa-list"></i> المشاريع الحالية (<?php echo count($projects); ?>)</h2>
             
@@ -182,7 +166,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
                 
-                <!-- نموذج التعديل المخفي -->
                 <div id="edit-<?php echo $id; ?>" style="display: none; margin-bottom: 15px; background: #0f172a; padding: 20px; border-radius: 8px; border: 1px solid #334155;">
                     <form method="POST">
                         <input type="hidden" name="action" value="edit">
@@ -219,7 +202,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
         </div>
 
-        <!-- معاينة سريعة -->
         <div class="admin-card">
             <h2><i class="fas fa-eye"></i> معاينة سريعة (للاختبار)</h2>
             <div class="row g-3">
@@ -243,7 +225,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/font-awesome/js/all.min.js"></script>
-    <!-- ✅ سكربتات لوحة التحكم (منفصلة) -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="./scripts/admin.js"></script>
 </body>

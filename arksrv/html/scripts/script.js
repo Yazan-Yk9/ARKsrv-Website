@@ -1,4 +1,3 @@
-// ===== 1. تحديث السنة تلقائياً =====
 document.addEventListener('DOMContentLoaded', function () {
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
@@ -6,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// ===== 2. التنقل السلس وإغلاق القائمة في الجوال =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
@@ -23,7 +21,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== 3. تأثير النافبار عند التمرير (محسّن بالأداء) =====
 let ticking = false;
 window.addEventListener('scroll', function () {
     if (!ticking) {

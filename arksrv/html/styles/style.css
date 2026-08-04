@@ -1,4 +1,3 @@
-/* ========== VARIABLES ========== */
 :root {
     --primary: #818cf8;
     --primary-hover: #6366f1;
@@ -13,8 +12,6 @@
     --radius: 12px;
     --transition: 0.3s ease-in-out;
 }
-
-/* ========== RESET ========== */
 * {
     box-sizing: border-box;
 }
@@ -24,8 +21,6 @@ body {
     color: var(--text-light);
     line-height: 1.8;
 }
-
-/* ========== NAVBAR ========== */
 .navbar {
     background-color: var(--bg-card) !important;
     border-bottom: 1px solid var(--border-color);
@@ -74,8 +69,6 @@ body {
 .nav-btn-contact:hover {
     background-color: #4338ca !important;
 }
-
-/* ========== HEADERS ========== */
 .hero-section,
 .services-header,
 .portfolio-header {
@@ -90,8 +83,6 @@ body {
     color: var(--border-color);
     opacity: 0.5;
 }
-
-/* ========== BUTTONS ========== */
 .btn-primary-custom {
     background-color: #4f46e5;
     border: none;
@@ -102,8 +93,6 @@ body {
 .btn-primary-custom:hover {
     background-color: #4338ca;
 }
-
-/* ========== CARDS (عام) ========== */
 .card-custom {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -126,8 +115,6 @@ body {
 .icon-large {
     font-size: 3rem;
 }
-
-/* ========== TECH TAGS ========== */
 .tech-tag,
 .badge-tech {
     background-color: var(--bg-dark);
@@ -141,8 +128,6 @@ body {
     margin-left: 6px;
     margin-bottom: 6px;
 }
-
-/* ========== SOCIAL BUTTONS ========== */
 .social-btn {
     width: 60px;
     height: 60px;
@@ -167,7 +152,6 @@ body {
 .btn-github { background-color: #24292e; }
 .btn-email { background-color: #ea4335; }
 
-/* ========== FOOTER ========== */
 .footer {
     background-color: var(--bg-footer);
     border-top: 1px solid var(--border-color);
@@ -185,10 +169,6 @@ body {
     border-color: var(--border-color);
     margin: 25px 0 15px;
 }
-
-/* ========================================================== */
-/* ========== تحسينات خاصة بـ SERVICES.HTML ========== */
-/* ========================================================== */
 .service-detail-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -206,7 +186,6 @@ body {
     box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
     background-color: #243049; /* لون أفتح قليلاً عند الهوفر */
 }
-/* الرقم الترتيبي الشفاف */
 .service-number {
     position: absolute;
     left: 20px;
@@ -258,7 +237,6 @@ body {
 .service-list li:last-child {
     border-bottom: none;
 }
-/* مربع الأكواد التفاعلي */
 .code-box {
     background-color: #0b1329;
     border: 1px solid var(--border-color);
@@ -279,10 +257,6 @@ body {
 .code-box .cmd {
     color: #fcd34d;
 }
-
-/* ========================================================== */
-/* ========== تحسينات خاصة بـ PORTFOLIO.HTML ========== */
-/* ========================================================== */
 .project-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -304,10 +278,6 @@ body {
     font-size: 2rem;
     margin-bottom: 10px;
 }
-
-/* ========================================================== */
-/* ========== تحسينات خاصة بـ PROJECT.HTML ========== */
-/* ========================================================== */
 .project-detail-content h2 {
     color: var(--text-white);
     font-weight: 700;
@@ -354,7 +324,6 @@ body {
     transform: translateX(-3px);
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     .hero-section,
     .services-header,
@@ -380,7 +349,6 @@ body {
         padding: 10px;
     }
 }
-/* ========== تنسيق محتوى المشروع (Markdown) ========== */
 .project-detail-content h1,
 .project-detail-content h2,
 .project-detail-content h3 {
@@ -443,10 +411,6 @@ body {
     color: #e2e8f0;
     border-radius: 4px;
 }
-/* ========================================================== */
-/* ========== تنسيقات لوحة التحكم admin.php ========== */
-/* ========================================================== */
-
 .admin-card {
     background-color: #1e293b;
     border: 1px solid #334155;
@@ -502,8 +466,6 @@ body {
     font-size: 0.8rem;
     padding: 5px 12px;
 }
-
-/* عناصر المشروع في قائمة الإدارة */
 .project-item {
     background-color: #0f172a;
     border: 1px solid #334155;
@@ -532,8 +494,6 @@ body {
 .project-item .d-flex {
     gap: 8px;
 }
-
-/* محرر الكود (Textarea) */
 .code-editor {
     font-family: 'Courier New', monospace;
     direction: ltr;
@@ -550,8 +510,6 @@ body {
 .admin-card textarea.form-control {
     resize: vertical;
 }
-
-/* صندوق المعاينة */
 .preview-box {
     background-color: #0f172a;
     padding: 15px;
@@ -579,14 +537,11 @@ body {
     color: #38bdf8;
 }
 
-/* نصوص المساعدة الصغيرة */
 .admin-card small.text-white-50 {
     display: block;
     margin-top: 5px;
     font-size: 0.8rem;
 }
-
-/* تنسيق أزرار الإجراءات في الـ admin */
 .admin-card .btn-group-custom {
     display: flex;
     gap: 10px;
@@ -602,7 +557,6 @@ body {
     padding: 80px 0;
     border-bottom: 1px solid var(--border-color);
 }
-
 .error-box {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -615,13 +569,10 @@ body {
     overflow: hidden;
     transition: border-color var(--transition), box-shadow var(--transition);
 }
-
 .error-box:hover {
     border-color: var(--primary);
     box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
 }
-
-/* الأيقونة الخلفية الكبيرة الشفافة */
 .error-box .bg-icon {
     position: absolute;
     left: -30px;
@@ -632,8 +583,6 @@ body {
     user-select: none;
     transform: rotate(-10deg);
 }
-
-/* رقم الخطأ 404 */
 .error-code {
     font-size: 6rem;
     font-weight: 900;
@@ -644,8 +593,6 @@ body {
     position: relative;
     z-index: 2;
 }
-
-/* العنوان الرئيسي */
 .error-title {
     color: var(--text-white);
     font-size: 1.8rem;
@@ -655,10 +602,8 @@ body {
     z-index: 2;
 }
 .error-title i {
-    color: #f59e0b; /* لون تحذيري أصفر */
+    color: #f59e0b;
 }
-
-/* النص الوصفي */
 .error-text {
     color: #94a3b8;
     font-size: 1.1rem;
@@ -675,7 +620,6 @@ body {
     border: 1px solid var(--border-color);
 }
 
-/* زر العودة للرئيسية */
 .btn-home {
     background-color: #4f46e5;
     border: none;
@@ -697,8 +641,6 @@ body {
     box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
     color: var(--text-white);
 }
-
-/* التذييل الصغير (سطر الأوامر الوهمي) */
 .error-footer-icon {
     margin-top: 25px;
     font-size: 0.9rem;
@@ -710,7 +652,6 @@ body {
     color: var(--primary);
 }
 
-/* التجاوب مع الجوال */
 @media (max-width: 576px) {
     .error-box {
         padding: 30px 20px;

@@ -1,13 +1,8 @@
-/* ========================================================== */
-/* ========== تنسيقات لوحة التحكم admin9x.php ========== */
-/* ========================================================== */
-
 ::placeholder {
     color: #646262 !important;
     opacity: 0.7;  /* درجة الشفافية (اختياري) */
 }
 
-/* دعم لمتصفحات مختلفة */
 ::-webkit-input-placeholder { color: #646262 !important; opacity: 0.7; }
 ::-moz-placeholder          { color: #646262 !important; opacity: 0.7; }
 :-ms-input-placeholder      { color: #646262 !important; opacity: 0.7; }
@@ -69,8 +64,6 @@
     font-size: 0.8rem;
     padding: 5px 12px;
 }
-
-/* عناصر المشروع في قائمة الإدارة */
 .project-item {
     background-color: #0f172a;
     border: 1px solid #334155;
@@ -99,8 +92,6 @@
 .project-item .d-flex {
     gap: 8px;
 }
-
-/* محرر الكود (Textarea) */
 .code-editor {
     font-family: 'Courier New', monospace;
     direction: ltr;
@@ -117,8 +108,6 @@
 .admin-card textarea.form-control {
     resize: vertical;
 }
-
-/* صندوق المعاينة */
 .preview-box {
     background-color: #0f172a;
     padding: 15px;
@@ -145,17 +134,11 @@
     border-radius: 6px;
     color: #38bdf8;
 }
-
-/* نصوص المساعدة الصغيرة */
 .admin-card small.text-white-50 {
     display: block;
     margin-top: 5px;
     font-size: 0.8rem;
 }
-
-/* ========================================================== */
-/* ========== تنسيقات بطاقات المشاريع (portfolio) ========== */
-/* ========================================================== */
 
 .project-card {
     background-color: #1e293b;
