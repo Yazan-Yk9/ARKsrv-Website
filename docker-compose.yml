@@ -29,6 +29,7 @@ services:
   php-fpm:
     image: 'php:8.2-fpm-alpine'
     container_name: arksrv_php
+    user: "1000:1000"
     restart: unless-stopped
     volumes:
       - ./arksrv/html:/usr/share/nginx/html
