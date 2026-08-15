@@ -1,5 +1,16 @@
 # 📘 ARKsrv - Linux Server Management Solution
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SSL](https://img.shields.io/badge/SSL-5C5C5C?style=for-the-badge&logo=ssl&logoColor=white)
+![Certbot](https://img.shields.io/badge/Certbot-3C8C3C?style=for-the-badge&logo=certbot&logoColor=white)
+
+
+
+
 ## 🚀 Project Overview
 ARKsrv is an integrated system for managing technical projects on Linux servers, designed to display your services and technical solutions professionally. The site includes:
 
