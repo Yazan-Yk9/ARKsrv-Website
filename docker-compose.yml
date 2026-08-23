@@ -38,4 +38,5 @@ services:
 
 networks:
   arksrv-network:
+    name: arksrv-network
     driver: bridge
