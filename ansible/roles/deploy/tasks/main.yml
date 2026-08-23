@@ -1,0 +1,78 @@
+---
+
+- name: 2.1 Clone the public repository from GitHub
+  git:
+    repo: "{{ github_repo }}"
+    dest: "{{ project_path }}"
+    clone: yes
+    update: yes
+    force: yes
+
+- name: 3.1 Create npm-data and npm-letsencrypt directories
+  file:
+    path: "{{ project_path }}/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - npm-data
+    - npm-data/auth
+    - npm-letsencrypt
+
+- name: 4.1 Copy npm_backup.tar.gz from local machine to VPS
+  copy:
+    src: "{{ backup_file_local }}"
+    dest: /tmp/npm_backup.tar.gz
+
+- name: 4.2 Extract and restore Nginx Proxy Manager data
+  unarchive:
+    src: /tmp/npm_backup.tar.gz
+    dest: "{{ project_path }}"
+    remote_src: yes
+    creates: "{{ project_path }}/npm-data/auth/.htpasswd"
+
+- name: 4.3 Delete temporary compressed file from VPS
+  file:
+    path: /tmp/npm_backup.tar.gz
+    state: absent
+
+- name: 4.4 CleanUp
+  file:
+    path: "{{ project_path }}/{{ item }}"
+    state: absent
+  loop:
+    - README.md
+    - README.ar.md
+    - LICENSE
+    - .gitignore
+    - ansible
+    - .git
+
+  ignore_errors: yes
+
+- name: 5.1 Change owner of html directory to user 1000 (PHP-FPM)
+  file:
+    path: "{{ project_path }}/arksrv/html"
+    state: directory
+    recurse: yes
+    owner: 1000
+    group: 1000
+  ignore_errors: yes
+
+- name: 5.2 Run Docker Compose (ensure containers are up)
+  shell:
+    cmd: docker compose up -d
+    chdir: "{{ project_path }}"
+  args:
+    executable: /bin/bash
+  register: compose_result
+  changed_when: "'Creating' in compose_result.stdout or 'Recreating' in compose_result.stdout"
+
+- name: 6.1 Display success message
+  debug:
+    msg: |
+      Server setup and site deployment completed successfully
+      ------------------------------------------------
+      - Server path: {{ project_path }}
+      - Proxy Manager (NPM) URL: http://{{ ansible_facts.default_ipv4.address }}:81
+      - Main site URL: http://{{ ansible_facts.default_ipv4.address }}
+      - Note: All SSL certificates and old settings have been restored.

@@ -1,0 +1,5 @@
+---
+# متغيرات عامة لجميع البيئات
+project_path: "/opt/web"
+backup_file_local: "~/lab/npm_backup.tar.gz"
+github_repo: "https://github.com/Yazan-Yk9/ARKsrv-Website.git"

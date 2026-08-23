@@ -431,3 +431,6 @@ FodyWeavers.xsd
 npm-data/
 npm-letsencrypt/
 *.old
+ansible/inventories/lab/hosts.yml
+*.tar.gz
+*.zip

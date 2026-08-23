@@ -1,0 +1,9 @@
+---
+- name: Setup production server with Docker and deploy Arksrv site
+  hosts: vps_servers
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - docker
+    - deploy

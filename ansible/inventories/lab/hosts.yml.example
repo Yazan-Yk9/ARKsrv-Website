@@ -1,0 +1,10 @@
+---
+all:
+  children:
+    vps_servers:
+      hosts:
+        arksrv_vps:
+          ansible_host: <HOST_IP>
+          ansible_user: <USERNAME>
+          ansible_become: yes
+          # ansible_become_pass: "****"     
