@@ -1,23 +1,34 @@
 # 📘 ARKsrv - Linux Server Management Solution
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SSL](https://img.shields.io/badge/SSL-5C5C5C?style=for-the-badge&logo=ssl&logoColor=white)
+![Certbot](https://img.shields.io/badge/Certbot-3C8C3C?style=for-the-badge&logo=certbot&logoColor=white)
 
-### 🚀 نبذة عن المشروع
-**ARKsrv** هو نظام متكامل لإدارة المشاريع التقنية الخاصة بخوادم Linux، صُمم ليعرض خدماتك وحلولك التقنية بطريقة احترافية. يشمل الموقع:
-- صفحة رئيسية تعريفية.
-- صفحة خدمات مفصلة.
-- معرض مشاريع (Portfolio) ديناميكي.
-- لوحة تحكم (Admin Panel) لإدارة المشاريع عبر `projects.json`.
 
-### ✨ الميزات الرئيسية
-- **عرض المشاريع ديناميكياً**: بطاقات مشاريع تُقرأ من ملف `projects.json`.
-- **لوحة تحكم سهلة**: إضافة، تعديل، وحذف المشاريع مع حقول (الأيقونة، الوصف، الوسوم، المحتوى Markdown).
-- **تصميم متجاوب (RTL)**: يدعم اللغة العربية بالكامل مع Bootstrap 5.
-- **أداء محسّن**: استخدام خطوط محلية، ضغط Gzip، وتخزين مؤقت للملفات الثابتة.
-- **صفحة 404 مخصصة**: صفحة خطأ جذابة مع روابط سريعة.
-- **أمان**: حماية لوحة التحكم عبر Nginx Proxy Manager (Auth Basic).
 
-### 🗂️ هيكل الملفات
-```text
+
+## 🚀 Project Overview
+ARKsrv is an integrated system for managing technical projects on Linux servers, designed to display your services and technical solutions professionally. The site includes:
+
+- A landing homepage.
+- A detailed services page.
+- A dynamic project portfolio.
+- An admin panel to manage projects via `projects.json`.
+
+## ✨ Key Features
+- **Dynamic project display:** Project cards are read from a `projects.json` file.
+- **Easy-to-use admin panel:** Add, edit, and delete projects with fields (icon, description, tags, Markdown content).
+- **Responsive (RTL) design:** Fully supports Arabic with Bootstrap 5.
+- **Performance optimized:** Uses local fonts, Gzip compression, and static file caching.
+- **Custom 404 page:** An attractive error page with quick navigation links.
+- **Security:** Admin panel is protected via Nginx Proxy Manager (Basic Auth).
+
+## 🗂️ File Structure
+```
 arksrv/
 ├── html/
 │   ├── index.html
@@ -25,62 +36,62 @@ arksrv/
 │   ├── portfolio.html
 │   ├── project.html
 │   ├── 404.html
-│   ├── admin9x.php          # لوحة التحكم
-│   ├── projects.json        # قاعدة البيانات
+│   ├── admin9x.php          # Admin panel
+│   ├── projects.json        # Database
 │   ├── styel.css
 │   ├── admin.css
 │   ├── script.js
 │   ├── portfolio.js
 │   ├── admin.js
 │   └── assets/
-│       ├── fonts/           # خطوط Cairo المحلية
-│       ├── font-awesome/    # Font Awesome (مجلدات css, js, webfonts)
-│       └── bootstrap/       # Bootstrap محلي
+│       ├── fonts/           # Local Cairo fonts
+│       ├── font-awesome/    # Font Awesome (css, js, webfonts folders)
+│       └── bootstrap/       # Local Bootstrap
 └── nginx-conf/
-    └── default.conf         # إعدادات Nginx للموقع
+    └── default.conf         # Nginx configuration for the site
 ```
 
-### ⚙️ التقنيات المستخدمة
-| التقنية | الغرض |
+## ⚙️ Technologies Used
+
+| Technology | Purpose |
 | :--- | :--- |
-| **HTML5, CSS3, JavaScript** | هيكل وتفاعل الموقع |
-| **Bootstrap 5 (RTL)** | تصميم متجاوب وجاهز |
-| **Font Awesome 6** | أيقونات احترافية |
-| **PHP 8.2** | تشغيل لوحة التحكم |
-| **Markdown** | كتابة محتوى المشاريع |
-| **Docker** | بيئة تشغيل معزولة (Nginx + PHP-FPM) |
-| **Nginx Proxy Manager** | بوابة رئيسية وإدارة SSL |
+| HTML5, CSS3, JavaScript | Site structure and interactivity |
+| Bootstrap 5 (RTL) | Responsive and ready-to-use design |
+| Font Awesome 6 | Professional icons |
+| PHP 8.2 | Admin panel backend |
+| Markdown | Project content writing |
+| Docker | Isolated runtime environment (Nginx + PHP-FPM) |
+| Nginx Proxy Manager | Main gateway and SSL management |
 
-### 🛠️ كيف تشغل المشروع؟
+## 🛠️ How to Run the Project?
 
-#### المتطلبات المسبقة
-- Docker و Docker Compose.
-- خادم VPS أو بيئة محلية مع `docker-compose`.
+### Prerequisites
+- Docker and Docker Compose.
+- A VPS server or a local environment with `docker-compose` support.
 
-#### خطوات التشغيل
+### Setup Steps
 ```bash
-# 1. استنساخ المستودع
+# 1. Clone the repository
 git clone https://github.com/your-username/arksrv.git
 cd arksrv
 
-# 2. إنشاء المجلدات المطلوبة
+# 2. Create the required directories
 mkdir -p arksrv/html arksrv/nginx-conf npm-data
 
-# 3. نسخ ملفات الموقع إلى arksrv/html
+# 3. Copy your site files into arksrv/html
 
-# 4. تشغيل الحاويات
+# 4. Start the containers
 docker-compose up -d
 ```
-### إعداد Nginx Proxy Manager
 
-1. افتح `http://YOUR_IP:81` (البيانات الافتراضية: `admin@example.com` / `changeme`).
-2. أضف Proxy Host جديد:
-   - **Domain**: `example.com`
-   - **Forward Hostname**: `arksrv_website`
-   - **Forward Port**: `80`
-3. فعّل SSL عبر Let's Encrypt.
-4. في علامة **Advanced**، أضف كود حماية `admin9x.php`:
-
+### Setting up Nginx Proxy Manager
+1. Open `http://YOUR_IP:81` (default credentials: `admin@example.com` / `changeme`).
+2. Add a new Proxy Host:
+   - **Domain:** `example.com`
+   - **Forward Hostname:** `arksrv_website`
+   - **Forward Port:** `80`
+3. Enable SSL via Let's Encrypt.
+4. In the **Advanced** tab, add the following code to protect `admin9x.php`:
 ```nginx
 location ~ /admin9x\.php$ {
     auth_basic "ARKsrv Admin - Restricted";
@@ -88,8 +99,8 @@ location ~ /admin9x\.php$ {
     proxy_pass http://arksrv_website:80;
 }
 ```
-### التوسع المستقبلي
 
-- دعم مواقع متعددة عبر حاويات منفصلة.
-- نظام مراقبة (Monitoring) لوضع السيرفرات.
-- واجهة API لإدارة المحتوى عن بُعد.
+## 🚀 Future Expansion
+- Support for multiple sites via separate containers.
+- Monitoring system for server status.
+- Remote API for content management.
