@@ -103,5 +103,6 @@ nano ansible/inventories/lab/hosts.yml
 nano ansible/group_vars/all.yml
 
 # Deploy the entire ecosystem
+cd ansible
 ansible-playbook -i inventories/lab/hosts.yml playbooks/site.yml --ask-become-pass
 ```
