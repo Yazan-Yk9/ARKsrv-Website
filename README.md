@@ -1,106 +1,107 @@
-# 📘 ARKsrv - Linux Server Management Solution
+# ARKsrv - Infrastructure Automation & Full-Stack Web Management
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![SSL](https://img.shields.io/badge/SSL-5C5C5C?style=for-the-badge&logo=ssl&logoColor=white)
-![Certbot](https://img.shields.io/badge/Certbot-3C8C3C?style=for-the-badge&logo=certbot&logoColor=white)
 
+---
 
+## Project Overview
 
+**ARKsrv** is a comprehensive portfolio project designed to showcase my expertise in **Linux System Administration, Infrastructure as Code (IaC), and Full-Stack Web Development.**
 
-## 🚀 Project Overview
-ARKsrv is an integrated system for managing technical projects on Linux servers, designed to display your services and technical solutions professionally. The site includes:
+It represents a complete, production-ready ecosystem where I designed, automated, and deployed a dynamic web application from the ground up. The project demonstrates my ability to bridge the gap between traditional system operations and modern DevOps practices.
 
-- A landing homepage.
-- A detailed services page.
-- A dynamic project portfolio.
-- An admin panel to manage projects via `projects.json`.
+---
 
-## ✨ Key Features
-- **Dynamic project display:** Project cards are read from a `projects.json` file.
-- **Easy-to-use admin panel:** Add, edit, and delete projects with fields (icon, description, tags, Markdown content).
-- **Responsive (RTL) design:** Fully supports Arabic with Bootstrap 5.
-- **Performance optimized:** Uses local fonts, Gzip compression, and static file caching.
-- **Custom 404 page:** An attractive error page with quick navigation links.
-- **Security:** Admin panel is protected via Nginx Proxy Manager (Basic Auth).
+## Core Skills Demonstrated
 
-## 🗂️ File Structure
-```
-arksrv/
-├── html/
-│   ├── index.html
-│   ├── services.html
-│   ├── portfolio.html
-│   ├── project.html
-│   ├── 404.html
-│   ├── admin9x.php          # Admin panel
-│   ├── projects.json        # Database
-│   ├── styel.css
-│   ├── admin.css
-│   ├── script.js
-│   ├── portfolio.js
-│   ├── admin.js
-│   └── assets/
-│       ├── fonts/           # Local Cairo fonts
-│       ├── font-awesome/    # Font Awesome (css, js, webfonts folders)
-│       └── bootstrap/       # Local Bootstrap
-└── nginx-conf/
-    └── default.conf         # Nginx configuration for the site
-```
-
-## ⚙️ Technologies Used
-
-| Technology | Purpose |
+| Domain | Technologies & Tools |
 | :--- | :--- |
-| HTML5, CSS3, JavaScript | Site structure and interactivity |
-| Bootstrap 5 (RTL) | Responsive and ready-to-use design |
-| Font Awesome 6 | Professional icons |
-| PHP 8.2 | Admin panel backend |
-| Markdown | Project content writing |
-| Docker | Isolated runtime environment (Nginx + PHP-FPM) |
-| Nginx Proxy Manager | Main gateway and SSL management |
+| **Automation & Orchestration** | Ansible (Roles, Playbooks, Variables, Handlers) |
+| **Containerization** | Docker & Docker Compose (Multi-container orchestration) |
+| **Web Server & Proxy** | Nginx & Nginx Proxy Manager (Reverse proxy, SSL/TLS management) |
+| **Backend Development** | PHP 8.2 (Custom admin panel & dynamic content management) |
+| **Frontend Development** | HTML5, CSS3, JavaScript, Bootstrap 5 (RTL), Font Awesome |
+| **Linux Administration** | Ubuntu Server, Systemd, User management, Firewall (UFW) |
+| **Security** | Let's Encrypt (SSL), Basic Authentication, Secure backup strategies |
 
-## 🛠️ How to Run the Project?
+---
 
-### Prerequisites
-- Docker and Docker Compose.
-- A VPS server or a local environment with `docker-compose` support.
+## Architecture & Problem Solving
 
-### Setup Steps
+### 1. Infrastructure as Code (IaC)
+Instead of manually configuring servers, I built a complete **Ansible automation suite** that provisions a fresh Ubuntu server into a fully functional web host with a single command. This includes:
+- **Role-based design:** Separate Ansible roles for `docker` installation and `deploy` logic.
+- **Idempotent operations:** Ensures the system can be run multiple times without breaking.
+- **GitOps workflow:** The application code is pulled directly from a public GitHub repository, ensuring version control and easy updates.
+
+### 2. Zero-Downtime Data Migration & Disaster Recovery
+One of the project's critical challenges was migrating an existing live website (including its SSL certificates and Nginx Proxy Manager configurations) to a new server. I solved this by:
+- Creating a **secure backup** (`npm_backup.tar.gz`) of sensitive operational data (`npm-data`, `npm-letsencrypt`).
+- Automating the **restoration** process within the Ansible Playbook.
+- Implementing a **post-deployment cleanup** that automatically removes `.git` history and documentation files from the production server, minimizing the attack surface.
+
+### 3. Secure & Dynamic Web Application
+The front-facing website is not a static page; it's a fully functional platform with:
+- **Dynamic Portfolio:** Projects are managed via a `projects.json` file, making content updates easy.
+- **Custom Admin Panel:** A secure PHP backend (`admin9x.php`) protected by Nginx Proxy Manager's Basic Authentication.
+- **RTL Support:** Fully supports Arabic content, demonstrating attention to localization and responsive design (Bootstrap 5).
+
+---
+
+## Project Structure
+
+```text
+ARKsrv-Website/                     # Infrastructure Automation Layer
+├── ansible.cfg
+├── group_vars/                     # Centralized variables (paths, repo URLs)
+├── inventories/                    # Target server inventory
+├── playbooks/
+│   └── site.yml                    # Main entry point
+└── roles/
+    ├── docker/                     # Official Docker installation
+    └── deploy/                     # Git clone, data restore, container deployment
+
+arksrv/                              # Application Source Code Layer
+├── html/
+│   ├── admin9x.php                 # Admin panel backend
+│   ├── projects.json               # Project database
+│   └── assets/                     # Local Bootstrap, Fonts, Font-Awesome
+└── nginx-conf/
+    └── default.conf                # Nginx site configuration
+```
+---
+
+## Deployment Pipeline (CI/CD Workflow)
+
+The entire system is designed to be deployed with a **single command**, reflecting my understanding of continuous integration and delivery concepts:
+
+1.  **Provision:** Ansible connects to the target VPS via SSH.
+2.  **Setup:** The `docker` role installs Docker CE from the official repository.
+3.  **Fetch:** The `deploy` role clones the latest source code from GitHub.
+4.  **Restore:** The backup containing SSL certificates and NPM configurations is uploaded and extracted.
+5.  **Launch:** `docker-compose up -d` spins up the Nginx Proxy Manager, Web Server, and PHP-FPM containers.
+6.  **Harden:** `.git/` and documentation files are removed automatically from the production server.
+
+---
+
+## Quick Setup (Portfolio Reference)
+
+**Prerequisites:** Ubuntu Server (20.04/22.04), SSH access, Ansible installed locally.
+
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/arksrv.git
-cd arksrv
+# Clone the automation repository
+git clone https://github.com/Yazan-Yk9/ARKsrv-website.git
+cd ARKsrv-Website
 
-# 2. Create the required directories
-mkdir -p arksrv/html arksrv/nginx-conf npm-data
+# Configure target server IP and variables
+nano ansible/inventories/lab/hosts.yml
+nano ansible/group_vars/all.yml
 
-# 3. Copy your site files into arksrv/html
-
-# 4. Start the containers
-docker-compose up -d
+# Deploy the entire ecosystem
+ansible-playbook -i inventories/lab/hosts.yml playbooks/site.yml --ask-become-pass
 ```
-
-### Setting up Nginx Proxy Manager
-1. Open `http://YOUR_IP:81` (default credentials: `admin@example.com` / `changeme`).
-2. Add a new Proxy Host:
-   - **Domain:** `example.com`
-   - **Forward Hostname:** `arksrv_website`
-   - **Forward Port:** `80`
-3. Enable SSL via Let's Encrypt.
-4. In the **Advanced** tab, add the following code to protect `admin9x.php`:
-```nginx
-location ~ /admin9x\.php$ {
-    auth_basic "ARKsrv Admin - Restricted";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-    proxy_pass http://arksrv_website:80;
-}
-```
-
-## 🚀 Future Expansion
-- Support for multiple sites via separate containers.
-- Monitoring system for server status.
-- Remote API for content management.
