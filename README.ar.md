@@ -1,95 +1,104 @@
-# 📘 ARKsrv - Linux Server Management Solution
+# ARKsrv - أتمتة البنية التحتية وإدارة الويب المتكاملة
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### 🚀 نبذة عن المشروع
-**ARKsrv** هو نظام متكامل لإدارة المشاريع التقنية الخاصة بخوادم Linux، صُمم ليعرض خدماتك وحلولك التقنية بطريقة احترافية. يشمل الموقع:
-- صفحة رئيسية تعريفية.
-- صفحة خدمات مفصلة.
-- معرض مشاريع (Portfolio) ديناميكي.
-- لوحة تحكم (Admin Panel) لإدارة المشاريع عبر `projects.json`.
+---
 
-### ✨ الميزات الرئيسية
-- **عرض المشاريع ديناميكياً**: بطاقات مشاريع تُقرأ من ملف `projects.json`.
-- **لوحة تحكم سهلة**: إضافة، تعديل، وحذف المشاريع مع حقول (الأيقونة، الوصف، الوسوم، المحتوى Markdown).
-- **تصميم متجاوب (RTL)**: يدعم اللغة العربية بالكامل مع Bootstrap 5.
-- **أداء محسّن**: استخدام خطوط محلية، ضغط Gzip، وتخزين مؤقت للملفات الثابتة.
-- **صفحة 404 مخصصة**: صفحة خطأ جذابة مع روابط سريعة.
-- **أمان**: حماية لوحة التحكم عبر Nginx Proxy Manager (Auth Basic).
+## نظرة عامة على المشروع
 
-### 🗂️ هيكل الملفات
-```text
-arksrv/
-├── html/
-│   ├── index.html
-│   ├── services.html
-│   ├── portfolio.html
-│   ├── project.html
-│   ├── 404.html
-│   ├── admin9x.php          # لوحة التحكم
-│   ├── projects.json        # قاعدة البيانات
-│   ├── styel.css
-│   ├── admin.css
-│   ├── script.js
-│   ├── portfolio.js
-│   ├── admin.js
-│   └── assets/
-│       ├── fonts/           # خطوط Cairo المحلية
-│       ├── font-awesome/    # Font Awesome (مجلدات css, js, webfonts)
-│       └── bootstrap/       # Bootstrap محلي
-└── nginx-conf/
-    └── default.conf         # إعدادات Nginx للموقع
-```
+**ARKsrv** هو مشروع متكامل صممته خصيصاً لعرض خبراتي في مجالات إدارة أنظمة لينكس، والبنية التحتية ككود (IaC)، وتطوير الويب المتكامل (Full-Stack).
 
-### ⚙️ التقنيات المستخدمة
-| التقنية | الغرض |
+يمثل هذا المشروع بيئة متكاملة وجاهزة للإنتاج، قمت من خلالها بتصميم ونشر تطبيق ويب ديناميكي بالكامل بأتمتة كاملة. يعكس المشروع قدرتي على ربط منهجيات إدارة الأنظمة التقليدية مع ممارسات DevOps الحديثة.
+
+---
+
+## المهارات الأساسية المعروضة في المشروع
+
+| المجال | الأدوات والتقنيات المستخدمة |
 | :--- | :--- |
-| **HTML5, CSS3, JavaScript** | هيكل وتفاعل الموقع |
-| **Bootstrap 5 (RTL)** | تصميم متجاوب وجاهز |
-| **Font Awesome 6** | أيقونات احترافية |
-| **PHP 8.2** | تشغيل لوحة التحكم |
-| **Markdown** | كتابة محتوى المشاريع |
-| **Docker** | بيئة تشغيل معزولة (Nginx + PHP-FPM) |
-| **Nginx Proxy Manager** | بوابة رئيسية وإدارة SSL |
+| **الأتمتة والتنسيق** | Ansible (الأدوار، الملفات الرئيسية، المتغيرات، المعالجات) |
+| **الحاويات (Containerization)** | Docker و Docker Compose (تنسيق الحاويات المتعددة) |
+| **خوادم الويب والبروكسي** | Nginx و Nginx Proxy Manager (بروكسي عكسي، إدارة شهادات SSL/TLS) |
+| **تطوير الواجهة الخلفية** | PHP 8.2 (لوحة تحكم إدارية مخصصة ومحتوى ديناميكي) |
+| **تطوير الواجهة الأمامية** | HTML5، CSS3، JavaScript، Bootstrap 5 (دعم RTL)، Font Awesome |
+| **إدارة أنظمة لينكس** | Ubuntu Server، Systemd، إدارة المستخدمين، جدار الحماية (UFW) |
+| **الأمان** | Let's Encrypt (شهادات SSL)، المصادقة الأساسية، استراتيجيات النسخ الاحتياطي الآمنة |
 
-### 🛠️ كيف تشغل المشروع؟
+---
 
-#### المتطلبات المسبقة
-- Docker و Docker Compose.
-- خادم VPS أو بيئة محلية مع `docker-compose`.
+## الهندسة المعمارية وحل المشكلات
 
-#### خطوات التشغيل
+### 1. البنية التحتية ككود (Infrastructure as Code)
+بدلاً من تكوين الخوادم يدوياً، قمت ببناء مجموعة متكاملة من أدوات Ansible التي تحول خادم Ubuntu جديد إلى خادم ويب متكامل بأمر واحد فقط. يتضمن ذلك:
+- **تصميم قائم على الأدوار (Roles):** أدوار منفصلة لتثبيت Docker وأخرى للنشر.
+- **عمليات متسقة (Idempotent):** ضمان إمكانية تشغيل النظام عدة مرات دون التسبب في أعطال.
+- **منهجية GitOps:** يتم سحب كود التطبيق مباشرة من مستودع عام على GitHub، مما يضمن التحكم في الإصدارات والتحديثات السهلة.
+
+### 2. ترحيل البيانات بدون توقف واستعادة الأعطال (Disaster Recovery)
+كان أحد التحديات الحرجة في هذا المشروع هو ترحيل موقع ويب حي (بما في ذلك شهادات SSL وإعدادات Nginx Proxy Manager) إلى خادم جديد. قمت بحل ذلك عن طريق:
+- إنشاء نسخة احتياطية آمنة (`npm_backup.tar.gz`) للبيانات التشغيلية الحساسة (`npm-data`، `npm-letsencrypt`).
+- أتمتة عملية الاستعادة داخل ملفات Ansible.
+- تطبيق عملية تنظيف ما بعد النشر تقوم بحذف مجلد `.git` وملفات التوثيق تلقائياً من خادم الإنتاج، لتقليل سطح الهجوم الأمني.
+
+### 3. تطبيق ويب ديناميكي وآمن
+الموقع الأمامي ليس مجرد صفحات ثابتة، بل هو منصة متكاملة تحتوي على:
+- **معرض أعمال ديناميكي:** يتم إدارة المشاريع عبر ملف `projects.json`، مما يجعل تحديث المحتوى سهلاً.
+- **لوحة تحكم إدارية مخصصة:** واجهة خلفية آمنة باستخدام PHP (`admin9x.php`) ومحمية بواسطة المصادقة الأساسية من Nginx Proxy Manager.
+- **دعم كامل للغة العربية:** مع مراعاة التصميم المتجاوب (RTL) باستخدام Bootstrap 5، مما يعكس اهتمامي بالتوافق مع اللغات المحلية.
+
+---
+
+## هيكل المشروع
+
+```text
+ansible-arksrv/                     # طبقة أتمتة البنية التحتية
+├── ansible.cfg
+├── group_vars/                     # المتغيرات المركزية (المسارات، روابط المستودعات)
+├── inventories/                    # ملفات تعريف الخوادم المستهدفة
+├── playbooks/
+│   └── site.yml                    # الملف الرئيسي للتشغيل
+└── roles/
+    ├── docker/                     # دور تثبيت Docker الرسمي
+    └── deploy/                     # دور استنساخ الكود، استعادة البيانات، وتشغيل الحاويات
+
+arksrv/                              # طبقة كود التطبيق المصدر
+├── html/
+│   ├── admin9x.php                 # لوحة التحكم الإدارية
+│   ├── projects.json               # قاعدة بيانات المشاريع
+│   └── assets/                     # ملفات Bootstrap، الخطوط، Font-Awesome
+└── nginx-conf/
+    └── default.conf                # إعدادات Nginx الخاصة بالموقع
+```
+## مسار النشر (سير عمل التكامل المستمر)
+
+تم تصميم النظام بأكمله ليتم نشره بأمر واحد، مما يعكس فهمي لمفاهيم التكامل والتسليم المستمر (CI/CD):
+
+1. **التجهيز:** يتصل Ansible بالخادم المستهدف عبر SSH.
+2. **الإعداد:** يقوم دور `docker` بتثبيت Docker CE من المصدر الرسمي.
+3. **الجلب:** يقوم دور `deploy` باستنساخ أحدث إصدار من الكود من GitHub.
+4. **الاستعادة:** يتم رفع النسخة الاحتياطية (التي تحتوي على الشهادات والإعدادات) وفك ضغطها.
+5. **الإطلاق:** يقوم الأمر `docker-compose up -d` بتشغيل حاويات Nginx Proxy Manager وخادم الويب و PHP-FPM.
+6. **التحصين:** يتم حذف ملفات `.git` وملفات التوثيق تلقائياً من خادم الإنتاج.
+
+---
+
+## الإعداد السريع (كمرجع للمحفظة الشخصية)
+
+**المتطلبات الأساسية:** خادم Ubuntu (20.04/22.04)، إمكانية الوصول عبر SSH، تثبيت Ansible محلياً.
+
 ```bash
-# 1. استنساخ المستودع
-git clone https://github.com/your-username/arksrv.git
-cd arksrv
+# استنساخ مستودع الأتمتة
+git clone https://github.com/your-username/ansible-arksrv.git
+cd ansible-arksrv
 
-# 2. إنشاء المجلدات المطلوبة
-mkdir -p arksrv/html arksrv/nginx-conf npm-data
+# تكوين IP الخادم والمتغيرات المطلوبة
+nano inventories/lab/hosts.yml
+nano group_vars/all.yml
 
-# 3. نسخ ملفات الموقع إلى arksrv/html
-
-# 4. تشغيل الحاويات
-docker-compose up -d
-```
-### إعداد Nginx Proxy Manager
-
-1. افتح `http://YOUR_IP:81` (البيانات الافتراضية: `admin@example.com` / `changeme`).
-2. أضف Proxy Host جديد:
-   - **Domain**: `example.com`
-   - **Forward Hostname**: `arksrv_website`
-   - **Forward Port**: `80`
-3. فعّل SSL عبر Let's Encrypt.
-4. في علامة **Advanced**، أضف كود حماية `admin9x.php`:
-
-```nginx
-location ~ /admin9x\.php$ {
-    auth_basic "ARKsrv Admin - Restricted";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-    proxy_pass http://arksrv_website:80;
-}
-```
-### التوسع المستقبلي
-
-- دعم مواقع متعددة عبر حاويات منفصلة.
-- نظام مراقبة (Monitoring) لوضع السيرفرات.
-- واجهة API لإدارة المحتوى عن بُعد.
+# تشغيل الأتمتة لنشر النظام البيئي بالكامل
+ansible-playbook -i inventories/lab/hosts.yml playbooks/site.yml --ask-become-pass
