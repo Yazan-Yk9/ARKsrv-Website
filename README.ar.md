@@ -93,12 +93,14 @@ arksrv/                              # طبقة كود التطبيق المصد
 
 ```bash
 # استنساخ مستودع الأتمتة
-git clone https://github.com/your-username/ansible-arksrv.git
-cd ansible-arksrv
+git clone https://github.com/Yazan-Yk9 /Arksrv-Website.git
+cd ARKsev-Website 
 
 # تكوين IP الخادم والمتغيرات المطلوبة
-nano inventories/lab/hosts.yml
-nano group_vars/all.yml
+nano ansible/inventories/lab/hosts.yml
+nano ansible/group_vars/all.yml
 
 # تشغيل الأتمتة لنشر النظام البيئي بالكامل
-ansible-playbook -i inventories/lab/hosts.yml playbooks/site.yml --ask-become-pass
+cd ansible
+ansible-playbook -i /inventories/lab/hosts.yml playbooks/site.yml --ask-become-pass
+```
